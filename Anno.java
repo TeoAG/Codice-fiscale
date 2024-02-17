@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 
-public class Anno {
+public class Anno extends Codice {
     public void Anno(){
         Scanner a =new Scanner(System.in); 
         int num=0;
         num=a.nextInt();
         num=num%100;
         if(num<10){
-            int anno=+0+num;
-            System.out.println(anno);
+            String anno='0' + String.valueOf(num);
+            codice+=anno;
         }else{
-            int anno=num;
-            System.out.println(anno);
+            String anno= String.valueOf(num);
+            codice+=anno;
         }
      
 

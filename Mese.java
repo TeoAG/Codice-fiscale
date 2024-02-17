@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Mese {
+public class Mese extends Codice{
      public void ListaMesi() {
         try {
             File file = new File("mese.txt");
@@ -15,9 +15,8 @@ public class Mese {
             while (!line.startsWith(c)) {
                 line = br.readLine();
             }
-            System.out.println(line);
             String[] l = line.split(" ");
-            System.out.println(l[1]);
+            codice+=(l[1]);
             br.close();
 
         } catch (IOException f) {
