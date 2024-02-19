@@ -15,7 +15,7 @@ public class Mese extends Codice{
             while (!line.startsWith(c)) {
                 line = br.readLine();
             }
-            String[] l = line.split(" ");
+            String[] l = line.split("\t");
             codice+=(l[1]);
             br.close();
 

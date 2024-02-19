@@ -9,17 +9,17 @@ public class Cognome_Nome extends Codice {
         cognome=cognome.toUpperCase();
         cognome=cognome.replace(" ","");
         
-        for (int i=0; i<=cognome.length(); i++){
+        for (int i=0; i<cognome.length(); i++){
             if(cognome.charAt(i)!='A' && cognome.charAt(i)!='E' && cognome.charAt(i)!='I' && cognome.charAt(i)!='O' && cognome.charAt(i)!='U' && cognome.charAt(i)!='Y'){
                 save+=cognome.charAt(i);
             }
             if(save.length()==3){
                 codice+=save;
                 i=cognome.length();
-                break;
+                return;
             }
         }
-        for (int i=0; i<=cognome.length(); i++){
+        for (int i=0; i<cognome.length(); i++){
             if(cognome.charAt(i)=='A' || cognome.charAt(i)=='E' || cognome.charAt(i)=='I' || cognome.charAt(i)=='O' || cognome.charAt(i)=='U' || cognome.charAt(i)=='Y'){
                 save+=cognome.charAt(i);
             }
@@ -48,24 +48,26 @@ public class Cognome_Nome extends Codice {
         nome=nome.toUpperCase();
         nome.replace(" ","");
         
-        for (int i=0; i<=nome.length(); i++){
+        for (int i=0; i<nome.length(); i++){
             if(nome.charAt(i)!='A' && nome.charAt(i)!='E' && nome.charAt(i)!='I' && nome.charAt(i)!='O' && nome.charAt(i)!='U' && nome.charAt(i)!='Y'){
                 save1+=nome.charAt(i);
             }
-            if(save1.length()==4){
-                codice+=save1.charAt(1);
-                codice+=save1.charAt(3);
-                codice+=save1.charAt(4);
-                i=nome.length();
-                return;
-            }else{
-                codice+=save1.charAt(1);
+            if(save1.length()>=4){
+                codice+=save1.charAt(0);
                 codice+=save1.charAt(2);
                 codice+=save1.charAt(3);
+                i=nome.length();
                 return;
             }
+           
         }
-        for (int i=0; i<=nome.length(); i++){
+        if(save1.length()<4){
+            codice+=save1.charAt(0);
+            codice+=save1.charAt(1);
+            codice+=save1.charAt(2);
+            return;
+        }
+        for (int i=0; i<nome.length(); i++){
             if(nome.charAt(i)=='A' || nome.charAt(i)=='E' || nome.charAt(i)=='I' || nome.charAt(i)=='O' || nome.charAt(i)=='U' || nome.charAt(i)=='Y'){
                 save1+=nome.charAt(i);
             }
